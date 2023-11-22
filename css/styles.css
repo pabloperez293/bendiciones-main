@@ -4,8 +4,60 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+:root{
+  --primer-color:white;
+
+  --fuente: 'Roboto', sans-serif;
 }
 body{
 /* fuentes */
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--fuente);
+}
+header{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../img/header.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* Texto header */
+.titleFamily{
+  color: var(--primer-color);
+  font-family: var(--fuente);
+}
+.textFamily{
+  color: var(--primer-color);
+  font-family: var(--fuente);
+}
+/* Menu */
+.navbar{
+  position: absolute;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.navbar a{
+  color: var(--primer-color);
+}
+.navbar .logo{
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.navbar .navLinks ul{
+  display: flex;
+}
+.navbar .navLinks ul li{
+  margin: 0 25px;
+}
+.navbar .navLinks ul li.active a{
+  color: blue;
+  font-weight: 600;
 }
