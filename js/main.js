@@ -1,19 +1,20 @@
-var swiper = new Swiper(".swiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 2,
-      slideShadows: true
-    },
-    spaceBetween: 60,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    }
-  });
+// Desplegar menu hamburguersa
+
+const menuHamburguer = document.querySelector(".menu-hamburguer");
+const navLinks = document.querySelector(".navLinks");
+
+menuHamburguer.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+
+  // cambiamos el icono
+  menuHamburguer.classList.toggle("fa-bars");
+  menuHamburguer.classList.toggle("fa-xmark");
+
+  // Le damos estilos cuando este activo
+  if( navLinks.classList.contains("active")){
+    menuHamburguer.computedStyleMap.color = "var(--second-color)";
+  }else{
+    menuHamburguer.computedStyleMap.color = "var(--first-color)";
+
+  }
+})
