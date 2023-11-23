@@ -50,7 +50,6 @@ header{
   font-size: 2em;
   font-weight: bold;
 }
-
 .navbar .navLinks ul{
   display: flex;
   text-decoration: none;
@@ -73,22 +72,17 @@ header{
   width: 35px;
 }
 
-
-/* Responsive  */
-@media screen and (max-width:900px) {
+/* --------------------Responsive  */
+@media screen and (max-width: 900px) {
   .navbar{
     padding: 0;
   }
   .navbar .logo{
     position: absolute;
     top: 50px;
-    left: 50px;
-  }
-  .navbar .navLinks.active{
-    display: flex;
+    left: 20px;
   }
    ul{
-    /* display: flex; */
     list-style:none;
   }
   .navbar .menuIcon{
@@ -103,9 +97,9 @@ header{
     display: block;
   }
   .navLinks{
+    position: fixed;
     top: 0;
     left: 0;
-    position: absolute;
     background-color: rgba(255, 255, 255, 0.349);
     backdrop-filter: blur(8px);
     width: 100%;
@@ -113,6 +107,14 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+  }
+  .navLinks.active{
+    transform: translate(0);
+  }
+  .fa-xmark {
+    margin-left: 0;
   }
   .navLinks ul{
     display: flex;
@@ -126,10 +128,14 @@ header{
   .menu-hamburguer {
     /* Estilo predeterminado para el ícono de hamburguesa */
     color: var(--first-color);
+    transition: color 0.3s ease;
   }
   
   .menu-hamburguer.fa-xmark {
     /* Estilo para el ícono de X (cuando el menú está activo) */
     color: var(--second-color);
+  }
+  .menu-hamburguer:hover {
+    color: var(--second-color); /* Cambia el color cuando el ícono está en estado hover */
   }
 }

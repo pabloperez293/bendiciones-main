@@ -1,20 +1,23 @@
 // Desplegar menu hamburguersa
-
 const menuHamburguer = document.querySelector(".menu-hamburguer");
 const navLinks = document.querySelector(".navLinks");
 
 menuHamburguer.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-
   // cambiamos el icono
   menuHamburguer.classList.toggle("fa-bars");
   menuHamburguer.classList.toggle("fa-xmark");
-
+  // Abrir o cerrar el menú
+  const isActive = navLinks.classList.toggle("active");
   // Le damos estilos cuando este activo
-  if( navLinks.classList.contains("active")){
-    menuHamburguer.computedStyleMap.color = "var(--second-color)";
-  }else{
-    menuHamburguer.computedStyleMap.color = "var(--first-color)";
-
-  }
-})
+  menuHamburguer.style.color = isActive ? "var(--second-color)" : "var(--first-color)";
+});
+// Agregar evento de clic a cada enlace del menú
+const menuLinks = document.querySelectorAll(".navLinks ul li a");
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuHamburguer.classList.remove("fa-xmark");
+    menuHamburguer.classList.add("fa-bars");
+    menuHamburguer.style.color = "var(--first-color)";
+  });
+});
