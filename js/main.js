@@ -21,3 +21,14 @@ menuLinks.forEach((link) => {
     menuHamburguer.style.color = "var(--first-color)";
   });
 });
+
+//--------- Swipper
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseover', () => {
+     card.style.transform = 'translateY(-10px)';
+  });
+ 
+  card.addEventListener('mouseout', () => {
+     card.style.transform = '';
+  });
+ });

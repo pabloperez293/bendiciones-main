@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Roboto:wght@400;900&display=swap');
 
+:root{
+  --first-color:#fff;
+  --third-color: #333;
+  --second-color: rgba(51, 230, 155, 0.822);
+  --fuente: 'Roboto', sans-serif;
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    text-decoration: none;
-}
-:root{
-  --first-color:white;
-  --second-color: rgba(51, 230, 155, 0.822);
-  --fuente: 'Roboto', sans-serif;
 }
 body{
 /* fuentes */
     font-family: var(--fuente);
 }
+
 header{
   height: 100vh;
   width: 100vw;
@@ -24,6 +25,7 @@ header{
   justify-content: space-evenly;
   align-items: center;
 }
+
 /* Texto header */
 .titleFamily{
   color: var(--first-color);
@@ -42,6 +44,7 @@ header{
   align-self: center;
   width: 100%;
   box-sizing: border-box;
+ 
 }
 .navbar a{
   color: var(--first-color);
@@ -49,17 +52,24 @@ header{
 .navbar .logo{
   font-size: 2em;
   font-weight: bold;
+  text-decoration: none;
+  list-style-type:  none;
 }
 .navbar .navLinks ul{
   display: flex;
-  text-decoration: none;
 }
 .navbar .navLinks ul li{
-  margin: 0 25px;
+  margin: 0 25px;  
+}
+.navbar .navLinks ul li a{
+  text-decoration: none;
+  list-style-type:  none;
 }
 .navbar .navLinks ul li.active a{
   color: var(--second-color) ;
   font-weight: 600;
+  text-decoration: none;
+  list-style-type:  none;
 }
 .navbar .menuIcon{
   display: none;
@@ -70,6 +80,68 @@ header{
   top: 50px;
   right: 50px;
   width: 35px;
+}
+/* ---------- Comentarios de la iglesia */
+.comment-section {
+  display: flex;
+  flex-direction: column; /* Cambiamos a columna para diseño móvil */
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column; /* Cambiamos a columna para diseño móvil */
+  align-items: center;
+}
+
+.comment-info {
+  display: flex;
+  align-items: center;
+}
+
+.comment-icon {
+  font-size: 2em;
+  color: var(--second-color);
+  margin-right: 15px;
+}
+
+.comment-title {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+}
+
+.comment-text {
+  color: #333;
+  text-align: center; /* Centramos el texto */
+}
+
+.comment-image {
+  width: 200px; /* Ajustamos el tamaño de la imagen */
+  height: 200px; /* Ajustamos el tamaño de la imagen */
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  margin-top: 15px; /* Espacio entre el texto y la imagen */
+}
+
+.comment-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.comment-image:hover img {
+  transform: scale(1.1);
 }
 
 /* --------------------Responsive  */
@@ -137,5 +209,44 @@ header{
   }
   .menu-hamburguer:hover {
     color: var(--second-color); /* Cambia el color cuando el ícono está en estado hover */
+  }
+}
+/* --------------swipper */
+.swiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+ }
+ 
+ .card {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 0 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+ }
+ 
+ .card:hover {
+  transform: translateY(-10px);
+ }
+ /* Diseño Responsive del comentario Section */
+ @media screen and (max-width: 600px) {
+  .comment-section {
+    margin: 10px; /* Espacio reducido en dispositivos móviles */
+    padding: 10px; /* Espacio reducido en dispositivos móviles */
+  }
+
+  .comment-image {
+    width: 100%; /* Hacemos que la imagen ocupe el ancho completo */
+    height: auto; /* Ajustamos la altura automáticamente */
+    margin-top: 10px; /* Espacio reducido en dispositivos móviles */
   }
 }
