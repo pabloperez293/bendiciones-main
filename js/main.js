@@ -32,3 +32,21 @@ document.querySelectorAll('.card').forEach(card => {
      card.style.transform = '';
   });
  });
+
+// ------------ Scroll del menu
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector(".navbar");
+  let insNavbarFixed = false;
+
+  window.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+  
+    if (scrollY > 50 && !insNavbarFixed) {
+      navbar.classList.add("fixed");
+      isNavbarFixed = true;
+    } else if (scrollY <= 50 && insNavbarFixed) {
+      navbar.classList.remove("fixed");
+      isNavbarFixed = false;
+    }
+  });
+});
