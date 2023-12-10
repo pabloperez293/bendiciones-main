@@ -70,7 +70,7 @@ ul{
   align-self: center;
   width: 100%;
   box-sizing: border-box;
-  background-color: transparent red;
+  background-color: transparent;
  
 }
 .navbar a{
@@ -200,6 +200,136 @@ ul{
  .card:hover {
   transform: translateY(-10px);
  }
+ /* ------------------Formulario */
+ /* Agregar al final de tus estilos CSS existentes */
+ .contact-section {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  margin-bottom: 40px; /* Añade margen inferior para que no choque con el footer */
+}
+
+.container-contact {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  color: var(--third-color);
+  font-family: var(--fuente);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 20px;
+}
+
+label {
+  color: var(--third-color);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--third-color);
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--second-color);
+}
+
+/* Efecto placeholder en labels */
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+  transform: translateY(-20px);
+  font-size: 12px;
+  color: var(--second-color);
+}
+
+/* Ajustes para textarea */
+textarea {
+  resize: vertical; /* Permite que el usuario redimensione verticalmente el textarea */
+}
+
+/* Efecto hover en input y textarea */
+input:hover,
+textarea:hover {
+  border-color: var(--second-color);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--second-color);
+  color: var(--first-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #4caf50;
+}
+/* advertisements //  shepherds */
+.swipper{
+  width: 100%;
+  padding: 150px 0 50px 0;
+}
+.swipperSlide{
+  width: 300px;
+  height: 500px;
+  background-color: var(--first-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  text-align: center;
+}
+.icons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.icons i{
+  font-size: 26px;
+  color: var(--second-color);
+}
+.icons img{
+  width: 120px;
+}
+.shepherdsContent{
+  display: flex;
+  justify-content: space-between;
+}
+.shepherdsText{
+  flex-basis: 50%;
+  text-align: left;
+}
+.shepherdsText h3{
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.shepherdsText p{
+  font-size: 14px;
+}
+.shepherdsImg{
+  flex-basis: 50%;
+  text-align: right;
+}
+.shepherdsImg img{
+  width: 120px;
+}
+
+
+
 /* ------------------------ footer */
 .container-footer{
   max-width: 1200px;
@@ -252,6 +382,7 @@ ul{
 .socialLink a:hover{
   background-color: var(--third-color);
 }
+
 /* --------------------Responsive  */
 @media screen and (max-width: 900px) {
   .navbar{
@@ -356,4 +487,9 @@ ul{
     height: auto; 
     margin-top: 10px; 
   }
+  /* -----formulario */
+  form {
+    grid-template-columns: 1fr; /* Cambia a una columna en dispositivos móviles */
+  }
+
 }
