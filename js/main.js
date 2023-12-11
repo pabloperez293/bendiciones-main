@@ -23,16 +23,20 @@ menuLinks.forEach((link) => {
 });
 
 //--------- Swipper
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mouseover', () => {
-     card.style.transform = 'translateY(-10px)';
-  });
- 
-  card.addEventListener('mouseout', () => {
-     card.style.transform = '';
-  });
- });
-
+const swiper = new Swiper('.mySwiper', { 
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  coverflowEffect: {
+    depth:500,
+    modifier:1,
+    slidesShadows:true,
+    rotate: 0,
+    stretch: 0,
+  },
+})
 // ------------ Scroll del menu
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");

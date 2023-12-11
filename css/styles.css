@@ -175,14 +175,6 @@ ul{
 }
 
 /* --------------swipper */
-.swiper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
- }
  
  .card {
   width: 300px;
@@ -200,6 +192,7 @@ ul{
  .card:hover {
   transform: translateY(-10px);
  }
+
  /* ------------------Formulario */
  /* Agregar al final de tus estilos CSS existentes */
  .contact-section {
@@ -284,9 +277,10 @@ button:hover {
   width: 100%;
   padding: 150px 0 50px 0;
 }
-.swipperSlide{
-  width: 300px;
+.swiper-slide{
+  width: 300px!important;
   height: 500px;
+  border-radius: 5%;
   background-color: var(--first-color);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   padding: 40px;
@@ -312,9 +306,12 @@ button:hover {
 .shepherdsText{
   flex-basis: 50%;
   text-align: left;
+  margin: 10px;
+  padding: 5px;
 }
 .shepherdsText h3{
   font-size: 20px;
+  margin: 5px;
   text-transform: uppercase;
 }
 .shepherdsText p{
@@ -326,6 +323,8 @@ button:hover {
 }
 .shepherdsImg img{
   width: 120px;
+  border-radius: 50%;
+
 }
 
 
