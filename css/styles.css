@@ -24,8 +24,11 @@ header{
   background-image: url(../img/header.jpg);
   background-size: cover;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  background-position: center; /* Añadido para centrar la imagen */
+  flex-direction: column; /* Cambiamos a columna para diseño móvil */
+  justify-content: center; /* Centramos verticalmente */
+  align-items: center; /* Centramos horizontalmente */
+  text-align: center; /
 }
 ul{
   list-style-type: none;
@@ -242,13 +245,10 @@ ul{
   align-items: center;
   background: linear-gradient(rgba(0 0 0 / .8), rgba(0 0 0 / .8)), url(../img/escritorio.jpg);
   background-size: cover;
-}
-.container-form{
-  display: grid;
   grid-template-columns: repeat(2,50%);
   padding: 20px;
   gap: 10px;
-  width: 1000px;
+  width: 100%;
 }
 .boxInfo{
   color: var(--first-color);
@@ -256,6 +256,115 @@ ul{
   flex-direction: column;
   gap: 50px;
 }
+.boxInfo > h2{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.data > p{
+  font-size: 1rem;
+}
+.data > p > i{
+  color: var(--second-color);
+  margin-right: 10px;
+  font-size: 25px;
+}
+.linkIconForm{
+  color: var(--first-color);
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 15px;
+}
+.data > i {
+  color: var(--second-color);
+  margin-right: 10px;
+  font-size: 25px;
+
+}
+form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+.input-box{
+  position: relative;
+}
+
+.input-box > input{
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  background: rgba(0 0 0 / .5);
+  border: 3px solid transparent;
+  letter-spacing: 1px;
+  transition: .3s;
+  color: var(--first-color);
+}
+/* cuando hacemos click se sub */
+.input-box > input:focus,
+.input-box > textarea:focus {
+  border-bottom: 3px solid var(--second-color);
+  animation: shake .2s;
+}
+.input-box > input::placeholder,
+.input-box > textarea::placeholder {
+  color: #a3a3a3;
+}
+.input-box > input:focus::placeholder,
+.input-box > textarea:focus::placeholder {
+  color: transparent;
+}
+.input-box > textarea {
+  width: 100%;
+  height: 130px;
+  background: rgba(0 0 0 / .5);
+  border: 3px solid transparent;
+  letter-spacing: 1px;
+  transition: .3s;
+  color: var(--first-color);
+  padding: 10px;
+  outline: none;
+}
+.input-box > i{
+  background: rgba(0 0 0 / .5);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  transition: .3s;
+}
+.input-box > input:focus ~ i {
+  color: var(--second-color)
+}
+form > button{
+  background: var(--second-color);
+  color: var(--first-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px;
+  transition: .2s;
+}
+form > button:hover,
+a:hover{
+  background: seagreen;
+}
+/* Retumb */
+@keyframes shake{
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90%{transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
 /* ------------------------ footer */
 .container-footer{
   max-width: 1200px;
@@ -412,5 +521,23 @@ ul{
     width: 100%; 
     height: auto; 
     margin-top: 10px; 
+  }
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-bg{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .boxInfo{
+    gap: 15px;
+  }
+  .boxInfo > h2{
+    font-size: 1.5rem;
   }
 }
