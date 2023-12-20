@@ -254,21 +254,27 @@
     <!-- Poner un formulario para llenarse y se contactado -->
     <!-- Agregar al final de tu archivo HTML, antes del cierre del body -->
 
-    <section class="contact-section">
-      <div class="container-contact">
-        <h2 class="titleFamily">Contáctanos</h2>
-        <form id="contactForm">
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="email">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Mensaje:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-
-          <button type="submit">Enviar Mensaje</button>
+    <section class="container-form form-bg">
+      <div class="boxInfo">
+        <h2 >Contactate con nosotros</h2>
+        <div class="data">
+          <a href="http://api.whatsapp.com/send?phone=15-6553-2547"><i class="fa-solid fa-phone"></i> 15-6553-2743</a>
+          <p><i class="fa-solid fa-envelope"></i> blessedandvictory1@gmail.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> San Martín 1877, San Martín, Provincia de Buenos Aires</p>
+        </div>
+        <form action="">
+          <div class="input-box">
+            <input type="text" required placeholder="Nombre y apellido">
+          </div>
+          <div class="input-box">
+            <input type="email" required placeholder="Correo electronico">
+          </div>
+          <div class="input-box">
+            <input type="text" required placeholder="Asunto">
+          </div>
+          <button type="submit">Enviar mensaje</button>
         </form>
+        
       </div>
     </section>
 
