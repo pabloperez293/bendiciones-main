@@ -525,15 +525,18 @@ a:hover{
 }
 /* --------------------Responsive  */
 @media screen and (max-width: 900px) {
+  body{
+    overflow-x: hidden;
+  }
   .imageRadio{
     display: none;
   }
   .navbar{
-    padding:20px;
+    padding:10px;
     justify-content: space-between;
   }
   .navbar .logo{
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-bottom: 10px;
   }
    ul{
@@ -648,6 +651,9 @@ a:hover{
 
  /*---------- Diseño Responsive del comentario Section */
  @media screen and (max-width: 600px) {
+  body{
+    overflow-x: hidden;
+  }
   .comment-section {
     margin: 10px; 
     padding: 10px;
@@ -670,7 +676,7 @@ a:hover{
     display: none;
   }
   .radioHome .imageRadio .img{
-    width: 368px;
+    max-width: 100%;
   }
   .radioHome .contentRadio .titleRadio{
     font-size: 4rem;
