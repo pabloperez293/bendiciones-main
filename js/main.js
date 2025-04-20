@@ -1,74 +1,79 @@
-// Imagen desaparece en modo responsive 
-const logoOn = document.getElementById("logoOn");
+// Desplegar menu hamburguersa
+const menuHamburguer = document.querySelector(".menu-hamburguer");
+const navLinks = document.querySelector(".navLinks");
 
-window.addEventListener("load", function() {
-  handleResize();
+menuHamburguer.addEventListener("click", () => {
+  // cambiamos el icono
+  menuHamburguer.classList.toggle("fa-bars");
+  menuHamburguer.classList.toggle("fa-xmark");
+  // Abrir o cerrar el menú
+  // const isActive = navLinks.classList.toggle("active");
+  // Le damos estilos cuando este activo
+  menuHamburguer.style.color = isActive ? "var(--second-color)" : "var(--first-color)";
+});
+// Agregar evento de clic a cada enlace del menú
+const menuLinks = document.querySelectorAll(".navLinks ul li a");
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuHamburguer.classList.remove("fa-xmark");
+    menuHamburguer.classList.add("fa-bars");
+    menuHamburguer.style.color = "var(--first-color)";
+  });
 });
 
-window.addEventListener("resize", function() {
-  handleResize(); 
+//--------- Swipper
+const swiper = new Swiper('.mySwiper', { 
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  coverflowEffect: {
+    depth:500,
+    modifier:1,
+    slidesShadows:true,
+    rotate: 0,
+    stretch: 0,
+  },
 })
-
-function handleResize(){
-  if (window.innerWidth > 767) {
-    logoOn.classList.add("offMovil");
-  }else{
-    logoOn.classList.remove("offMovil");
-  }
-}
-// img del nav off
-const logoOff = document.getElementById("logoOff");
-
-window.addEventListener("load", function() {
-  handleChange();
-});
-
-window.addEventListener("resize", function() {
-  handleChange();
-});
-
-function handleChange(){
-  if (window.innerWidth <= 766){
-    logoOff.classList.add("offOn");
-  }else{
-    logoOff.classList.remove("offOn");
-  }
-}
-// Modo dark 
+// ------------ Scroll del menu
 document.addEventListener("DOMContentLoaded", function () {
-  const darkModeToggle = document.getElementById("darkModeToggle");
+  const navbar = document.querySelector(".navbar");
+  let insNavbarFixed = false;
 
-  // Verificar si el modo oscuro está habilitado
-  if (localStorage.getItem("darkMode") === "enabled") {
-    document.body.classList.add("dark-mode");
-  }
-
-  darkModeToggle.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-
-    // Guardar el estado del modo oscuro en el almacenamiento local
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("darkMode", "enabled");
-    } else {
-      localStorage.setItem("darkMode", "disabled");
+  window.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+  
+    if (scrollY > 50 && !insNavbarFixed) {
+      navbar.classList.add("fixed");
+      isNavbarFixed = true;
+    } else if (scrollY <= 50 && insNavbarFixed) {
+      navbar.classList.remove("fixed");
+      isNavbarFixed = false;
     }
   });
 });
-// ---------------------
 
-// Menu Resposinve 
-document.addEventListener("DOMContentLoaded",function() {
-  const menuToggle = document.getElementById("menuToggle");
-  const menu = document.querySelector(".header-menu");
+// Movimiento del mouse
+document.addEventListener("mousemove", move);
+function move(evt){
+  this.querySelectorAll(".moveRadio").forEach(layer => {
+    const speed = layer.getAttribute("data-speed")
 
-  menuToggle.addEventListener("click", function() {
-    menu.classList.toggle("show-menu");
-  });
+    const x = (window.innerWidth - evt.pageX*speed)/120
+    const y = (window.innerWidth - evt.pageY*speed)/120
 
-  document.addEventListener("click", function (evt) {
-    if ( !menu.contains(evt.target) && !menuToggle.contains(evt.target)){
-      menu.classList.remove("show-menu");
-    } 
+    layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+
   })
-});
+}
 
+// cdn GSAP
+gsap.from(".logo",{opacity:0, duration:1, delay: 2, y:10})
+gsap.from(".navLinks",{opacity:0, duration:1, delay: 2.1, y:30, stagger:0.2})
+gsap.from(".radioHome",{opacity:0, duration:1, delay: 1.6, y:30})
+gsap.from(".contentRadio",{opacity:0, duration:1, delay: 1.8, y:30})
+gsap.from(".titleRadio",{opacity:0, duration:1, delay: 2, y:30})
+gsap.from(".descriptionRadio",{opacity:0, duration:1, delay: 2.1, y:30})
+gsap.from(".imageRadio",{opacity:0, duration:1, delay: 2.6, y:30})
