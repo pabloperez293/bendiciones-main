@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Roboto:wght@400;900&display=swap');
 
 :root{
-  --first-color: #fff;
-  --third-color: #333;
+  --first-color: rgb(255 255 255);
   --second-color: rgba(51, 230, 155, 0.822);
+  --third-color: #333;
+  --fourth-color: rgba(0, 0, 0, 1);
   --fuente: 'Roboto', sans-serif;
 }
 *{
@@ -14,7 +15,6 @@
 }
 body{
     font-family: var(--fuente);
-    text-transform: capitalize;    
 }
 
 header{
@@ -143,7 +143,6 @@ section{
 .navbar .menu-hamburguer{
   display: block;
   font-size: 1.5em;
-  color: var(--first-color);
   cursor: pointer;
 }
 /* ---------- Comentarios de la iglesia */
@@ -209,42 +208,86 @@ section{
 }
 /* ---------- Anuncios */
 
-.card{
-  position:relative;
-  width: 300px;
-  height: 350px;
-}
-.card .face{
-  position:absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: .s;
-}
+  .card{
+    position:relative;
+    width: 300px;
+    height: 350px;
+    transform-style: preserve-3d;
+    margin-top: 20px;
+  }
+  .cards-containers{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+  }
 
-.card .face{
-  transform: perspective(600px) rotateY(0deg);
-  box-shadow: 0 5px 10px #000;
+  .cards-container .card:nth-child(4),
+.cards-container .card:nth-child(5) {
+  grid-column: span 1; 
 }
+  .card .face{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+  }
 
-.card .front img{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: auto;
-}
-.card .front h3{
-  position: absolute;
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-  color: var( --first-color);
-  background: rgba(0,0,0,.4);
-  text-align: center;
-}
+  .card .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+  }
+
+  .card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+  }
+  .card .front h3{
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: var( --first-color);
+    background: rgba(0,0,0,.4);
+    text-align: center;
+  }
+  .card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: var(--third-color);
+    padding: 15px;
+    color: var(--second-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px var(--third-color);
+    cursor:pointer;
+  }
+  .card .back h3{
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+  }
+  .card .back p {
+    letter-spacing: 1px;
+    border-top: solid 1px var(--first-color);
+    margin-top: 2px;
+  }
+
+  .card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+  }
+
+  .card:hover .back{
+    transform: perspective(600px) rotateY(0deg);
+  }
 /* advertisements //  shepherds/* -----swipper */
  
 .swipper{
@@ -343,7 +386,7 @@ section{
   text-decoration: none;
 }
 .radioHome .contentRadio .btnRadio:hover{
-  letter-spacing: .2rem;
+  background: var(--fourth-color);
 }
 .radioHome .imageRadio{
   flex: 1 1 40rem;
@@ -466,8 +509,7 @@ form > button{
   padding: 10px;
   transition: .2s;
 }
-form > button:hover,
-a:hover{
+form > button:hover{
   background: seagreen;
 }
 /* Retumb */
@@ -674,9 +716,18 @@ a:hover{
   .navLinks.active {
     display: block;
   }
+  .cards-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .comment-section {
     margin: 10px; 
     padding: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
   }
   .comment-image {
     width: 100%; 
@@ -692,7 +743,6 @@ a:hover{
   .radioHome .contentRadio{
     padding-top: 9.5rem;
   }
-
   .radioHome .contentRadio .titleRadio{
     font-size: 4rem;
   }
