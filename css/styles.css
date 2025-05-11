@@ -712,9 +712,34 @@ form > button:hover{
   }
   .navLinks {
     display: none; 
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    text-align: center;
+    z-index: 10;
   }
   .navLinks.active {
     display: block;
+  }
+  .navLinks ul {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .navLinks ul li {
+    margin: 10px 0;
+  }
+  .textFamily{
+    padding: 5px;
+  }
+  .menuIcon {
+    display: block; 
+  }
+
+  .navLinks.active {
+    display: block; 
   }
   .cards-containers {
     display: flex;
