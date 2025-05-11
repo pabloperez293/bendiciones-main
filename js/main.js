@@ -57,6 +57,10 @@ function move(evt){
   })
 }
 
+  // Diezmar
+  document.getElementById('payButton').addEventListener('click', function() {
+    window.location.href = 'https://link.mercadopago.com.ar/pablodevperez';
+});
 // cdn GSAP
 gsap.from(".logo",{opacity:0, duration:1, delay: 2, y:10})
 gsap.from(".navLinks",{opacity:0, duration:1, delay: 2.1, y:30, stagger:0.2})

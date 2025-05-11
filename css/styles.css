@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Roboto:wght@400;900&display=swap');
 
 :root{
-  --first-color: rgb(255 255 255);
+  --first-color: rgba(255 255 255);
   --second-color: rgba(51, 230, 155, 0.822);
   --third-color: #333;
   --fourth-color: rgba(0, 0, 0, 1);
@@ -344,6 +344,45 @@ section{
 .shepherdsImg img{
   width: 120px;
   border-radius: 50%;
+}
+/* -----------Diezmos // ofrendas */
+.container-diezmar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+.content{
+  padding: 2rem;
+  background-color: rgba(244, 242, 242, 0.9); /* Fondo semitransparente para resaltar */
+  border-radius: 10px;
+}
+.titleDiezmo{
+  font-size: 2.2rem;
+  color: var(--fourth-color);
+  margin-bottom: 10px;
+}
+.social-text-diezmo{
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+.btn-diezmar{
+  width: 150px;
+  background-color: var(--second-color);
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn-diezmar:hover {
+  background-color: var( --third-color);
 }
 /* ---------------- Radio */
 .radioHome{
