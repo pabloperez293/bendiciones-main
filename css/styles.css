@@ -59,12 +59,7 @@ section{
   font-family: var(--fuente);
 }
 /* Menu */
-.navbar.fixed .menuIcon{
-  top: 10px;
-  right: 10px;
-  border-radius: 50%;
-  padding: 10px;
-}
+
 .navbar.fixed {
   position: fixed;
   top: 0;
@@ -135,16 +130,8 @@ section{
   text-decoration: none;
   list-style-type:  none;
 }
-.navbar .menuIcon{
-  display: none;
-  cursor: pointer;
-  order: -1;
-}
-.navbar .menu-hamburguer{
-  display: block;
-  font-size: 1.5em;
-  cursor: pointer;
-}
+
+
 /* ---------- Comentarios de la iglesia */
 .comment-section {
   display: flex;
@@ -635,17 +622,16 @@ form > button:hover{
    ul{
     list-style:none;
   }
-  .menuIcon{
-    display: none;
-  }
-  .navbar .menuIcon{
+
+  .menu-hamburguer {
     display: block;
+    font-size: 1.8rem;
     cursor: pointer;
+    z-index: 1001;
   }
-  .navbar .menuIcon i{
-    font-size: 1.5em;
-    color: var(--first-color);
-  }
+  
+ 
+
   .navbar .menu-hamburguer{
     display: block;
     font-size: 1.5em;
@@ -710,20 +696,10 @@ form > button:hover{
     color: var(--first-color);
     cursor: pointer;
   }
-  .menu-hamburguer.fa-xmark {
-    color: var(--second-color);
-  }
-  .navbar .fa-xmark {
-    font-size: 1.5em;
-    color: var(--first-color);
-    cursor: pointer;
-  }
   .menu-hamburguer:hover {
     color: white; 
   }
-  .navbar .menu-hamburguer.fa-xmark {
-    color: var(--second-color);
-  }
+
   header {
     padding: 20px;
     text-align: center;
