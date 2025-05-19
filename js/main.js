@@ -1,19 +1,19 @@
-const menuHamburguer = document.querySelector(".menu-hamburguer");
-const navLinks = document.querySelector(".navLinks");
+// const menuHamburguer = document.querySelector(".menu-hamburguer");
+// const navLinks = document.querySelector(".navLinks");
 
-menuHamburguer.addEventListener("click", function (e) {
-  e.stopPropagation();
-  navLinks.classList.toggle("active");
+// menuHamburguer.addEventListener("click", function (e) {
+//   e.stopPropagation();
+//   navLinks.classList.toggle("active");
 
-  // Alternar ícono
-  if (menuHamburguer.classList.contains("fa-bars")) {
-    menuHamburguer.classList.remove("fa-bars");
-    menuHamburguer.classList.add("fa-xmark");
-  } else {
-    menuHamburguer.classList.remove("fa-xmark");
-    menuHamburguer.classList.add("fa-bars");
-  }
-});
+//   // Alternar ícono
+//   if (menuHamburguer.classList.contains("fa-bars")) {
+//     menuHamburguer.classList.remove("fa-bars");
+//     menuHamburguer.classList.add("fa-xmark");
+//   } else {
+//     menuHamburguer.classList.remove("fa-xmark");
+//     menuHamburguer.classList.add("fa-bars");
+//   }
+// });
 
 
 // Cerrar el menú al hacer clic fuera del menú y del botón hamburguesa
