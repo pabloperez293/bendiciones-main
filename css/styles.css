@@ -19,7 +19,6 @@ body{
 
 header{
   height: 100vh;
-  width: 100vw;
   background-image: url(../img/header.jpg);
   background-size: cover;
   display: flex;
@@ -292,6 +291,7 @@ section{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   padding: 40px;
   text-align: center;
+  margin: 15px;
 }
 .icons{
   display: flex;
@@ -610,6 +610,9 @@ form > button:hover{
 @media screen and (max-width: 900px) {
   section{
     padding: 2rem;
+  }
+  .imageRadio img{
+ display: none
   }
   .navbar{
     padding:20px;

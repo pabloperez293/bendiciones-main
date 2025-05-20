@@ -4,16 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles -->
-    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+    <link rel="stylesheet" href="./css/styles.css" />
 
-    <!-- Remix Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <!-- CSS del menú mejorado -->
-    <link rel="stylesheet" href="./css/menu.css" />
-    
     <!-- Logo barra -->
     <link rel="icon" href="./img/logo.png" alt="imagenIcono" />
 
@@ -45,7 +37,7 @@
   </head>
   <body>
     <!-- Barra de menu y principio -->
-    <!-- <nav class="navbar">
+    <nav class="navbar">
       <div class="menu-hamburguer fa-solid fa-bars"></div>
 
       <a href="#" class="logo">Manantial de Bendiciones</a>
@@ -67,50 +59,8 @@
           nos amo
         </p>
       </div>
-    </header> -->
-  <!-- Encabezado con nuevo nav -->
-  <header class="header">
-    <nav class="nav container">
-      <div class="nav__data">
-        <a href="#" class="nav__logo">
-          <i class="ri-planet-line"></i> Manantial
-        </a>
-
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="ri-menu-line nav__burger"></i>
-          <i class="ri-close-line nav__close"></i>
-        </div>
-      </div>
-
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li><a href="#" class="nav__link">Inicio</a></li>
-          <li><a href="#" class="nav__link">Eventos</a></li>
-
-          <li class="dropdown__item">
-            <div class="nav__link">
-              Iglesia <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-            </div>
-            <ul class="dropdown__menu">
-              <li><a href="#" class="dropdown__link"><i class="ri-group-line"></i> Pastores</a></li>
-              <li><a href="#" class="dropdown__link"><i class="ri-radio-line"></i> Radio</a></li>
-              <li class="dropdown__subitem">
-                <div class="dropdown__link">
-                  <i class="ri-map-pin-line"></i> Sedes <i class="ri-add-line dropdown__add"></i>
-                </div>
-                <ul class="dropdown__submenu">
-                  <li><a href="#" class="dropdown__sublink"><i class="ri-building-line"></i> San Martín</a></li>
-                  <li><a href="#" class="dropdown__sublink"><i class="ri-building-line"></i> José C. Paz</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li><a href="#" class="nav__link">Contacto</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    </header>
+  
     <!-- Poner una referencia de lo que es nuestra iglesia -->
     <section class="comment-section">
       <div class="comment-content">
@@ -414,7 +364,6 @@
         <img
           src="./img/microfono.png"
           alt="Queda en la tarde"
-          width="125px"
           class="moveRadio"
           data-speed="-3"
         />
@@ -516,8 +465,8 @@
             <ul>
               <li><a href="#">Quinta "La hermosa"</a></li>
               <li><a href="#">IBE "Manantial de Bendiciones"</a></li>
-              <li><a href="#">texto</a></li>
-              <li><a href="#">texto</a></li>
+              <li><a href="#">Años Dorados</a></li>
+              <li><a href="#">Termina el secundario</a></li>
             </ul>
           </div>
 
@@ -555,21 +504,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script >
-
-       const showMenu = (toggleId, navId) => {
-      const toggle = document.getElementById(toggleId),
-            nav = document.getElementById(navId);
-
-      toggle.addEventListener('click', () => {
-        nav.classList.toggle('show-menu');
-        toggle.classList.toggle('show-icon');
-      });
-    }
-    showMenu('nav-toggle','nav-menu');
-    </script>
-
     <!-- script -->
-    <!-- <script src="./js/main.js"></script> -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
