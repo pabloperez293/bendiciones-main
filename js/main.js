@@ -1,5 +1,6 @@
 const navLinks = document.getElementById("navLinks");
 const menuHamburguer = document.querySelector(".menu-hamburguer");
+const navLinksItems = document.querySelectorAll("#navLinks a");
 
 menuHamburguer.addEventListener("click", function () {
   navLinks.classList.toggle("active");
@@ -19,6 +20,13 @@ window.addEventListener("click", function (e) {
   }
 });
 
+navLinksItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuHamburguer.classList.add("fa-bars");
+    menuHamburguer.classList.remove("fa-xmark");
+  });
+});
 // Swiper
 const swiper = new Swiper('.mySwiper', {
   effect: "coverflow",

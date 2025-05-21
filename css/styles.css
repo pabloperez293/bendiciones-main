@@ -627,51 +627,59 @@ form > button:hover{
   .imageRadio img{
     display: none
   }
-  .navbar{
+ .navbar{
     padding:20px;
     justify-content: space-between;
-  }
+  } 
   .navbar .logo{
     font-size: 1.5em;
     margin-bottom: 10px;
-  }
-   ul{
-    list-style:none;
-  }
-  .navbar .menu-hamburguer{
-    display: block !important;  /* Esto hará que se muestre */
-    font-size: 1.5em;
-    color: var(--first-color);
-    cursor: pointer;
-  }
+  } 
   .navbar.fixed .menu-hamburguer {
     top: 10px;
     right: 10px;
     border-radius: 50%;
     padding: 10px;
   }
-  .navLinks{
-    display: flex ;
-    position: static;
-    top: 90px;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.349);
-    backdrop-filter: blur(8px);
-    width: auto;
-    flex-direction: row;
-    justify-content: flex-end;
-    transform: translateX(-100%);
-    transition: all 0.5s ease;
-    padding: 20px 0;
-  }
-  .navLinks.active{
-    display: block;
+  
+  .navbar .navLinks.active {
     transform: translate(0);
   }
-  .fa-xmark {
-    margin-left: 0;
+  
+  .navLinks ul li {
+    margin: 15px 0;
   }
-  .navLinks ul{
+  
+  .navLinks.active{
+    display: flex;
+  }
+  .menu-hamburguer{
+   display: flex;
+   font-size: 1.5rem;
+   color: var(--first-color); /* o cualquier color que uses */
+   cursor: pointer;
+   z-index: 100;
+ }
+  .navLinks{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px; /* ajusta si tu navbar es más grande o pequeña */
+    right: 20px;
+    width: 200px; /* puedes ajustar este ancho */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+
+    backdrop-filter: blur(8px);
+    /* width: auto; */
+    /* justify-content: flex-end; */
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+  }
+    .navLinks ul{
     flex-direction: column;
     align-items: center;
     margin: 0;
@@ -691,16 +699,6 @@ form > button:hover{
     transform: translateX(-100%);
     transition: all 0.5s ease;
   }
-  .navbar .navLinks ul li{
-    margin: 15px 0;
-    font-size: 1.2rem;
-  }
-  .navbar .navLinks.active {
-    transform: translate(0);
-  }
-  .navLinks ul li {
-    margin: 15px 0;
-  }
   .menu-hamburguer {
     display: block;
     cursor: pointer;
@@ -710,7 +708,7 @@ form > button:hover{
   }
   .menu-hamburguer:hover {
     color: white; 
-  }
+  } 
 
   header {
     padding: 20px;
