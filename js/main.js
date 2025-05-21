@@ -1,8 +1,20 @@
+const navLinks = document.getElementById("navLinks");
+const menuHamburguer = document.querySelector(".menu-hamburguer");
 
-// Cerrar el menú al hacer clic fuera del menú y del botón hamburguesa
+menuHamburguer.addEventListener("click", function () {
+  navLinks.classList.toggle("active");
+  menuHamburguer.classList.toggle("fa-bars");
+  menuHamburguer.classList.toggle("fa-xmark");
+  console.log("first")
+});
+
 window.addEventListener("click", function (e) {
-  if (!navLinks.contains(e.target) && !menuHamburguer.contains(e.target)) {
+  if (
+    !navLinks.contains(e.target) &&
+    !menuHamburguer.contains(e.target)
+  ) {
     navLinks.classList.remove("active");
+    menuHamburguer.classList.add("fa-bars");
     menuHamburguer.classList.remove("fa-xmark");
   }
 });

@@ -31,7 +31,7 @@ header{
 .bg-container-header{
   background: transparent;
   width: 50%;
-  height: 250px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,6 +39,7 @@ header{
   text-align: center;
   background-color:  rgba(69, 70, 70, 0.82);
   opacity: 2 ;
+  border-radius: 20px;
 }
 ul{
   list-style-type: none;
@@ -58,7 +59,17 @@ section{
   font-family: var(--fuente);
 }
 /* Menu */
-
+.menu-hamburguer {
+  display: none;
+}
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block; /* Mostramos por defecto */
+  z-index: 1001;
+}
 .navbar.fixed {
   position: fixed;
   top: 0;
@@ -129,7 +140,6 @@ section{
   text-decoration: none;
   list-style-type:  none;
 }
-
 
 /* ---------- Comentarios de la iglesia */
 .comment-section {
@@ -403,7 +413,7 @@ section{
 .radioHome .contentRadio .btnRadio{
   margin-top: 1rem;
   display: inline-block;
-  padding: .9rem 3rem;
+  padding: 15px;
   font-size: 1.7rem;
   color: var(--first-color);
   background: var(--second-color);
@@ -611,8 +621,11 @@ form > button:hover{
   section{
     padding: 2rem;
   }
+  .bg-container-header{
+    width: 100%;
+  }
   .imageRadio img{
- display: none
+    display: none
   }
   .navbar{
     padding:20px;
@@ -625,18 +638,8 @@ form > button:hover{
    ul{
     list-style:none;
   }
-
-  .menu-hamburguer {
-    display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
-    z-index: 1001;
-  }
-  
- 
-
   .navbar .menu-hamburguer{
-    display: block;
+    display: block !important;  /* Esto hará que se muestre */
     font-size: 1.5em;
     color: var(--first-color);
     cursor: pointer;
@@ -648,29 +651,31 @@ form > button:hover{
     padding: 10px;
   }
   .navLinks{
-    position: fixed;
-    top: 0;
-    left: 0;
+    display: flex ;
+    position: static;
+    top: 90px;
+    right: 0;
     background-color: rgba(255, 255, 255, 0.349);
     backdrop-filter: blur(8px);
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: auto;
+    flex-direction: row;
+    justify-content: flex-end;
     transform: translateX(-100%);
     transition: all 0.5s ease;
+    padding: 20px 0;
   }
   .navLinks.active{
+    display: block;
     transform: translate(0);
   }
   .fa-xmark {
     margin-left: 0;
   }
   .navLinks ul{
-    display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
   }
   .navbar .navLinks{
     position: fixed;
@@ -693,11 +698,15 @@ form > button:hover{
   .navbar .navLinks.active {
     transform: translate(0);
   }
+  .navLinks ul li {
+    margin: 15px 0;
+  }
   .menu-hamburguer {
     display: block;
-    font-size: 1.5em;
-    color: var(--first-color);
     cursor: pointer;
+    font-size: 2rem;
+    color: blue;
+    margin: 10px;
   }
   .menu-hamburguer:hover {
     color: white; 
@@ -724,37 +733,10 @@ form > button:hover{
 
  /*---------- Diseño Responsive del comentario Section */
  @media screen and (max-width: 768px) {
-  .menuIcon {
-    display: block;
-    cursor: pointer;
-  }
-  .navLinks {
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: white;
-    text-align: center;
-    z-index: 10;
-  }
-  .navLinks ul {
-    flex-direction: column; 
-    width: 100%;
-  }
-
-  .navLinks ul li {
-    margin: 10px 0;
-  }
   .textFamily{
     padding: 5px;
   }
-  .menuIcon {
-    display: block; 
-  }
 
-  .navLinks.active {
-    display: block; 
-  }
   .cards-containers {
     display: flex;
     flex-direction: column;
@@ -772,12 +754,6 @@ form > button:hover{
     width: 100%; 
     height: auto; 
     margin-top: 10px; 
-  }
-  header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .radioHome .contentRadio{
     padding-top: 9.5rem;
