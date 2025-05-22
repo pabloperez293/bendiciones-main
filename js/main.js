@@ -1,31 +1,20 @@
+const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("navLinks");
-const menuHamburguer = document.querySelector(".menu-hamburguer");
-const navLinksItems = document.querySelectorAll("#navLinks a");
 
-menuHamburguer.addEventListener("click", function () {
+
+menuToggle.addEventListener("click", function () {
   navLinks.classList.toggle("active");
-  menuHamburguer.classList.toggle("fa-bars");
-  menuHamburguer.classList.toggle("fa-xmark");
-  console.log("first")
-});
+  menuToggle.classList.add("rotate");
+  setTimeout(() => menuToggle.classList.remove("rotate"), 400);
 
-window.addEventListener("click", function (e) {
-  if (
-    !navLinks.contains(e.target) &&
-    !menuHamburguer.contains(e.target)
-  ) {
-    navLinks.classList.remove("active");
-    menuHamburguer.classList.add("fa-bars");
-    menuHamburguer.classList.remove("fa-xmark");
+  // Cambia el icono de hamburguesa a cruz y viceversa
+  if (navLinks.classList.contains("active")) {
+    menuToggle.classList.remove("fa-bars");
+    menuToggle.classList.add("fa-xmark");
+  } else {
+    menuToggle.classList.remove("fa-xmark");
+    menuToggle.classList.add("fa-bars");
   }
-});
-
-navLinksItems.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-    menuHamburguer.classList.add("fa-bars");
-    menuHamburguer.classList.remove("fa-xmark");
-  });
 });
 // Swiper
 const swiper = new Swiper('.mySwiper', {
@@ -35,13 +24,13 @@ const swiper = new Swiper('.mySwiper', {
   slidesPerView: "auto",
   loop: true,
   coverflowEffect: {
-    depth: 500,
-    modifier: 1,
-    slidesShadows: true,
+    depth: 300,
     rotate: 0,
-    stretch: 0,
-  },
+    modifier: 1,
+    slideShadows: true,
+  }
 });
+
 
 // Scroll menu fixed
 window.addEventListener("scroll", function () {

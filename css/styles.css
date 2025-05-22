@@ -98,6 +98,15 @@ section{
   text-decoration: none;
   list-style-type:  none;
 }
+.navLinks{
+  display: flex;
+  transition: all .5s ease;
+}
+.menu-hamburguer{
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
 .navbar .navLinks{
   display: flex;
   align-items: center;
@@ -140,7 +149,18 @@ section{
   text-decoration: none;
   list-style-type:  none;
 }
+.rotate {
+  animation: rotateIcon 0.5s;
+}
 
+@keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* ---------- Comentarios de la iglesia */
 .comment-section {
   display: flex;
@@ -291,7 +311,7 @@ section{
   padding: 150px 0 50px 0;
 }
 .mySwiper{
-  margin: 55px;
+  margin: 50px;
 }
 .swiper-slide{
   width: 300px!important;
@@ -319,6 +339,7 @@ section{
 .shepherdsContent{
   display: flex;
   justify-content: space-between;
+  margin: auto ;
 }
 .shepherdsText{
   flex-basis: 50%;
@@ -339,8 +360,8 @@ section{
   text-align: right;
 }
 .shepherdsImg img{
-  width: 120px;
-  border-radius: 50%;
+  width: 110px;
+  border-radius: 20%;
 }
 /* -----------Diezmos // ofrendas */
 .container-diezmar{
@@ -649,67 +670,57 @@ form > button:hover{
   .navLinks ul li {
     margin: 15px 0;
   }
-  
+    .navbar .navLinks ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+    .navbar .navLinks ul li {
+    margin: 0;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: var(--second-color);
+    color: white!important;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+  }
+    .navbar .navLinks ul li a {
+    color: var(--third-color);
+    width: 100%;
+    display: block;
+  }
   .navLinks.active{
     display: flex;
   }
   .menu-hamburguer{
    display: flex;
    font-size: 1.5rem;
-   color: var(--first-color); /* o cualquier color que uses */
+   color: var(--first-color); 
    cursor: pointer;
    z-index: 100;
  }
   .navLinks{
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 60px; /* ajusta si tu navbar es más grande o pequeña */
-    right: 20px;
-    width: 200px; /* puedes ajustar este ancho */
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-
-    backdrop-filter: blur(8px);
-    /* width: auto; */
-    /* justify-content: flex-end; */
-    transform: translateX(-100%);
-    transition: all 0.5s ease;
-  }
-    .navLinks ul{
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-  .navbar .navLinks{
     position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.349);
-    backdrop-filter: blur(8px);
+    right: -100%;
+    top: 60px;
+    background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100vh;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateX(-100%);
-    transition: all 0.5s ease;
+    transition: right 0.3s;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .navLinks.active {
+    right: 0;
   }
   .menu-hamburguer {
     display: block;
-    cursor: pointer;
-    font-size: 2rem;
-    color: blue;
-    margin: 10px;
   }
-  .menu-hamburguer:hover {
-    color: white; 
-  } 
-
   header {
     padding: 20px;
     text-align: center;
